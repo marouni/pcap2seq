@@ -1,10 +1,11 @@
 pcap2seq
 ========
 
-Convert pcap files to Hadoop sequence files.
+Converts pcap files to Hadoop sequence files.
 Pcap is a binary file format that stores network traffic capture (using tcpdump or wireshark). The pcap format consists of all the captured packets (up to a certain length) and packet headers. 
 
-Processing pcap files directly with Hadoop is inefficent since pcap files are not splitable, so a single hadoop worker 
+Processing pcap files directly with Hadoop is inefficent since pcap files are not splittable, so a single hadoop worker will work on a single file even if the fill spans multiple splits.
+
 Converting pcap to sequence file format creates a splitable file that can be processed using multiple hadoop workers. 
 
 
