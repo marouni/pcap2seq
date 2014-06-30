@@ -30,12 +30,12 @@ Run the jar using hadoop binary with three arguments :
 
 2 - name of output file (file:///home/user/outputfile.seq for local filesystem or outputfile.seq for HDFS)
 
-3 - compression : you can use block level compression in sequence file by setting this argument to 'gzip' or 'bzip' to use a specific codec.
+3 - compression : you can use block level compression in sequence file by setting this argument to 'org.apache.hadoop.io.compress.GzipCodec' or 'org.apache.hadoop.io.compress.BZip2Codec' to use a specific codec.
 For no compression set this argument to 'none'
 
 Example :
 
-hadoop jar pcap2seq-1.2.jar file.pcap file.seq gzip
+hadoop jar pcap2seq-1.2.jar file.pcap file.seq org.apache.hadoop.io.compress.BZip2Codec
 
 Converts file.pcap to file.seq with block level compression using GZIP. The output file will be stored in HDFS.
 
