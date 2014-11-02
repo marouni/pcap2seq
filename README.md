@@ -5,13 +5,15 @@ Converts [pcap files](http://wiki.wireshark.org/Development/LibpcapFileFormat) t
 
 Processing pcap files with Hadoop MapReduce is inefficent since pcap files are not splittable, so a single hadoop worker processes the whole pcap file even if the file spans multiple blocks.
 
-Converting pcap to sequence file format creates a splittable and compressable file that can be processed using multiple hadoop workers. 
+Converting pcap to sequence file format creates a splittable and compressable file that can be processed using multiple hadoop workers.
+
+The converter does not require any external jars, so it can be run with the hadoop binary with the default classpath.
 
 
 Build
 ========
-The project requires [gradle](http://www.gradle.org/downloads)
-To build it, clone the repository then run :
+The project requires [gradle](http://www.gradle.org/downloads).
+To build the project, clone the repository then run :
 ```
 gradle clean jar
 ```
